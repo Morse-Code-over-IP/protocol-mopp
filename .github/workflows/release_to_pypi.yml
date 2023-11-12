@@ -48,6 +48,7 @@ jobs:
           with:
               password: ${{ secrets.PYPI_API_TOKEN }}
               repository-url: https://test.pypi.org/legacy/
+              packages-dir: python/mopp/dist/
 
        # - name: Publish distribution to PyPI
        #   uses: pypa/gh-action-pypi-publish@master
