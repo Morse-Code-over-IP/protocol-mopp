@@ -36,7 +36,8 @@ jobs:
         - name: Build source and wheel distributions
           run: |
             cd python/mopp 
-            python3 -m pip install --upgrade build twine
+            ls
+            python3 -m pip install --upgrade build twine wheel
             python3 -m build
             twine check --strict dist/*
     
