@@ -7,6 +7,7 @@ MOPP is a protocol designed for the transmission of Morse code over data protoco
 
 This protocol description outlines the structure of MOPP packets, the encoding of Morse code elements, and how the protocol can be used over UDP for IP networks.
 
+The current document describes version 1 of the protocol.
 
 ## Design Goals
 
@@ -34,6 +35,14 @@ The payload consists of Morse code information encoded as follows:
   - 10b: dah
   - 00b: End of Character (EOC)
   - 11b: End of Word (EOW)
+
+
+#### Heartbeat (Modification for UDP Chat Server)
+
+The MOPP UDP Chat server is always trying to receive packets. If nothing is sent, the connection will timeout.
+This timeout triggers the sending of empty hearbeat packets to all clients (no payload).
+If the clients respond, their session gets updated.
+
 
 ### Complete Packet Format:
 
@@ -76,12 +85,13 @@ As an ASCII string:
 
 - Use UDP for packet transmission.
 - Send the MOPP packet as the payload of the UDP packet.
-- Define a port for MOPP communication.
+- Define a port for MOPP communication (standard 7373).
 
 ## Conclusion
 
-MOPP over UDP provides an efficient and language-agnostic method for transmitting Morse code over IP networks, catering to the constraints of bandwidth and ensuring faithful representation of Morse code messages.
+MOPP over UDP provides an efficient and language-agnostic method for transmitting Morse code over IP networks, 
+catering to the constraints of bandwidth and ensuring faithful representation of Morse code messages.
 
 # References
-- [Original MOPP Protocol description](https://github.com/oe1wkl/Morserino-32/blob/master/Documentation/Protocol%20Description/morse_code_over_packet_protocol.md)
+- [Original MOPP Protocol description](https://github.com/oe1wkl/Morserino-32/blob/master/Documentation/Protocol%20Description/morse_code_over_packet_protocol.md) by Willi, OE1WKL
 - [Local copy of the protocol description](./doc/protocol-mopp.orig.md)
