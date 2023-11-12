@@ -2,6 +2,8 @@
 
 **WIP**
 
++ Find here: https://test.pypi.org/project/mopp/
+
 # Installing the package
 + `pip install -i https://test.pypi.org/simple/ mopp==1.0.1`
 
