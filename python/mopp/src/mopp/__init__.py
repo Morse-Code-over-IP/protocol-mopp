@@ -94,7 +94,6 @@ def ljust(string, width, fillchar=' '):
 # Module for MOPP protocol
 # Taken and adjusted from the m32-chat-server implementation by SP9WPN
 from math import ceil
-import logging
 
 class Mopp:
     serial = 1
@@ -112,7 +111,7 @@ class Mopp:
         return bincode
 
     def mopp(self, speed, msg):
-        logging.debug("Encoding message with "+str(speed)+" wpm :"+str(msg))
+        #logging.debug("Encoding message with "+str(speed)+" wpm :"+str(msg))
 
         morse = {
             "0" : "-----", "1" : ".----", "2" : "..---", "3" : "...--", "4" : "....-", "5" : ".....",
@@ -212,7 +211,8 @@ class Mopp:
         elif sym == '11':
             s = 'EOW'
         else:
-            logging.debug ("This should not happen: symbol ", s)
+            return ""
+            #logging.debug ("This should not happen: symbol ", s)
         return s
     
     def _morse2txt(self, morse):
