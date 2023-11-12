@@ -97,4 +97,4 @@ catering to the constraints of bandwidth and ensuring faithful representation of
 
 ## References
 - [Original MOPP Protocol description](https://github.com/oe1wkl/Morserino-32/blob/master/Documentation/Protocol%20Description/morse_code_over_packet_protocol.md) ([Local copy](./doc/protocol-mopp.orig.md)) by Willi, OE1WKL
-- Encoder and Decoder in Python: implementation taken from [Sigbit](https://github.com/tuxintrouble/sigbit) by Sebastian Stetter, DJ5SE
+- Encoder and Decoder in Python: implementation taken from [Sigbit](https://github.com/tuxintrouble/sigbit) by Sebastian Stetter, DJ5SE. Other parts have been derived from the implementation by SP9WPN.

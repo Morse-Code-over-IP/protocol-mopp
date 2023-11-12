@@ -1,2 +1,3 @@
 - write a test
 - version of package as tag version? https://gist.github.com/jrmlhermitte/bbfda76d59b820560bf2ff4a1e57d42d
+- merge the class and cleanup
