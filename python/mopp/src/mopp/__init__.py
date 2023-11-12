@@ -94,6 +94,7 @@ def ljust(string, width, fillchar=' '):
 # Module for MOPP protocol
 # Taken and adjusted from the m32-chat-server implementation by SP9WPN
 from math import ceil
+import logging
 
 class Mopp:
     serial = 1
