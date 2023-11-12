@@ -1,9 +1,23 @@
 name: Publish ${package_name} to PyPI / GitHub
 
 on:
-  push:
-    tags:
-      - "v*"
+    push:
+      branches:
+        - 'master'
+        - 'main'
+        - 'dev'
+  
+      tags:
+        - 'v*'
+        - 'v*.*'
+        - 'v*.*.*'
+        - '*'
+        - '*.*'
+        - '*.*.*'
+    pull_request:
+      branches:
+        - 'main'
+        - 'dev'
 
 jobs:
     build-n-publish:
