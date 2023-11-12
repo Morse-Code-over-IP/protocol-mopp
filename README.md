@@ -93,7 +93,7 @@ MOPP over UDP provides an efficient and language-agnostic method for transmittin
 catering to the constraints of bandwidth and ensuring faithful representation of Morse code messages.
 
 ## Implementations
-- Python (PyPI): [PyPI Package MOPP](./python/mopp/README.md)
+- Python (PyPI): [PyPI Package MOPP](https://test.pypi.org/project/mopp/)
 
 ## References
 - [Original MOPP Protocol description](https://github.com/oe1wkl/Morserino-32/blob/master/Documentation/Protocol%20Description/morse_code_over_packet_protocol.md) ([Local copy](./doc/protocol-mopp.orig.md)) by Willi, OE1WKL
