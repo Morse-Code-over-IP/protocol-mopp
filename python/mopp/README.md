@@ -1,14 +1,6 @@
-# TODO - create by chatgpt
+# MOPP Protocol - Morse Code over IP
 
-
-   
-
-
-
-
-# SigBit Python Utility Functions
-
-This package provides common utility functions for the SigBit project.
+This package provides common utility functions MOPP protocol.
 
 ## Functions
 
@@ -71,11 +63,11 @@ A lookup table (`morse`) is provided for Morse code encoding and decoding.
 
 ## License
 
-This code is part of the SigBit project and is released under the [GNU GENERAL PUBLIC LICENSE Version 3](https://www.gnu.org/licenses/gpl-3.0.html).
+This code was part of the SigBit project and is released under the [GNU GENERAL PUBLIC LICENSE Version 3](https://www.gnu.org/licenses/gpl-3.0.html).
 
-## Author
+## Authors
 
 - **Sebastian Stetter, DJ5SE**
-- GitHub: [tuxintrouble](https://github.com/tuxintrouble)
+- **Dr. Gerolf Ziegenhain, DG6FL**
 
-For more information, visit the [SigBit project on GitHub](https://github.com/tuxintrouble/sigbit).
+For more information, visit the [MOPP protocol on GitHub](https://github.com/Morse-Code-over-IP/protocol-mopp).
