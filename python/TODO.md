@@ -1,3 +1,2 @@
 - write a test
-- create a github workflow
 - version of package as tag version?
