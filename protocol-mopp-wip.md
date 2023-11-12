@@ -38,11 +38,11 @@ The payload consists of Morse code information encoded as follows:
 ### Complete Packet Format:
 
 ```
-+---------------------+-------------------+
-| Protocol Version    | Serial Number     |
-+---------------------+-------------------+
++----------------------+-------------------+
+| Protocol Version     | Serial Number     |
++----------------------+-------------------+
 | Speed at Origin (WpM)| Payload           |
-+---------------------+-------------------+
++----------------------+-------------------+
 ```
 
 ## Example:
@@ -82,3 +82,6 @@ As an ASCII string:
 
 MOPP over UDP provides an efficient and language-agnostic method for transmitting Morse code over IP networks, catering to the constraints of bandwidth and ensuring faithful representation of Morse code messages.
 
+# References
+- [Original MOPP Protocol description](https://github.com/oe1wkl/Morserino-32/blob/master/Documentation/Protocol%20Description/morse_code_over_packet_protocol.md)
+- [Local copy of the protocol description](./doc/protocol-mopp.orig.md)
