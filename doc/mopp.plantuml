@@ -1,0 +1,8 @@
+@startuml
+json MOPP {
+   "2 bits":"Protocol Version",
+   "6 bits":"Serial Number",
+   "6 bits":"Speed in WPM",
+   "2 .. N bits": ["01 - dit", "10 - dah", "00 - EOC", "11 - EOW"]
+}
+@enduml
