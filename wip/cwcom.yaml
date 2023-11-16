@@ -1,0 +1,59 @@
+asyncapi: '2.0.0'
+
+info:
+  title: CWCom over MQTT
+  version: '1.0.0'
+
+channels:
+  morseCode:
+    publish:
+      message:
+        $ref: '#/components/messages/MorseCodeMessage'
+
+  receiveMorseCode:
+    subscribe:
+      message:
+        $ref: '#/components/messages/MorseCodeMessage'
+
+components:
+  messages:
+    MorseCodeMessage:
+      payload:
+        type: object
+        properties:
+          command:
+            type: string
+            description: 'The command type (e.g., DAT for data).'
+          length:
+            type: integer
+            description: 'Length of the Morse code message.'
+          id:
+            type: string
+            description: 'Identifier or sender ID.'
+          sequence:
+            type: integer
+            description: 'Sequence number.'
+          code:
+            type: array
+            items:
+              type: integer
+            description: 'Array of Morse code elements.'
+          n:
+            type: integer
+            description: 'Number of elements in the Morse code array.'
+          status:
+            type: string
+            description: 'Status or version information.'
+          a21:
+            type: integer
+            description: 'Additional field.'
+          a22:
+            type: integer
+            description: 'Additional field.'
+          a23:
+            type: integer
+            description: 'Additional field.'
+          a4:
+            type: string
+            description: 'Additional field.'
+

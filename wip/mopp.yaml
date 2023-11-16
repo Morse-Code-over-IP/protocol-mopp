@@ -1,0 +1,55 @@
+asyncapi: 2.0.0
+info:
+  title: MOPP over MQTT
+  version: 1.0.0
+
+channels:
+  morseCode:
+    publish:
+      message:
+        payload:
+          type: string
+          description: "MOPP-encoded Morse code message."
+
+components:
+  messages:
+    MOPPMessage:
+      properties:
+        version:
+          type: string
+          description: "MOPP Protocol Version."
+        serialNumber:
+          type: integer
+          format: int32
+          description: "Serial number for packet identification."
+        speed:
+          type: integer
+          format: int32
+          description: "Speed at origin in Words per Minute (WpM)."
+        payload:
+          type: string
+          description: "MOPP-encoded Morse code payload."
+
+  schemas:
+    MOPPPacket:
+      properties:
+        protocolVersion:
+          type: string
+          description: "MOPP Protocol Version."
+        serialNumber:
+          type: integer
+          format: int32
+          description: "Serial number for packet identification."
+        speed:
+          type: integer
+          format: int32
+          description: "Speed at origin in Words per Minute (WpM)."
+        payload:
+          type: string
+          description: "MOPP-encoded Morse code payload."
+
+    MOPPPublishMessage:
+      properties:
+        message:
+          $ref: "#/components/messages/MOPPMessage"
+
