@@ -6,7 +6,8 @@
 # License: GNU GENERAL PUBLIC LICENSE Version 3
 #
 # common utility functions for SigBit
-
+from math import ceil
+import json
 
 def ditlen(wpm):
     """returns the lenght of a dit in seconds for a given words-per-minute"""
@@ -93,7 +94,6 @@ def ljust(string, width, fillchar=' '):
 
 # Module for MOPP protocol
 # Taken and adjusted from the m32-chat-server implementation by SP9WPN
-from math import ceil
 
 class Mopp:
     serial = 1
@@ -101,6 +101,14 @@ class Mopp:
     def __init__(self, speed = 20):
         self.speed = speed
         return
+    
+    def set_speed(self, speed = 20):
+        # Ref timings: https://morsecode.world/international/timing.html#:~:text=It's%20clear%20that%20this%20makes,%22)%20which%20also%20makes%20sense.
+        speed_wpm = speed
+        self.dit_duration = int(60 / (50*speed_wpm)*1000)
+        self.dah_duration = 3*self.dit_duration
+        self.eoc_duration = 3*self.dit_duration
+        self.eow_duration = 7*self.dit_duration
 
     def _str2hex(self, bytes):
         hex = ":".join("{:02x}".format(c) for c in bytes)
@@ -217,3 +225,22 @@ class Mopp:
     
     def _morse2txt(self, morse):
         return
+    
+    def return_duration_json(self, message):
+        json_string = '{"durations": []}'
+        data = json.loads(json_string)
+
+        for symbol in message:
+            if symbol == ".":
+                data['durations'].append(self.dit_duration)
+                data['durations'].append(-self.dit_duration)
+            elif symbol == "-":
+                data['durations'].append(self.dah_duration)
+                data['durations'].append(-self.dit_duration)
+            elif symbol == "C": # EOC
+                data['durations'].append(-self.eoc_duration)
+            elif symbol == "W": # EOW
+                data['durations'].append(-self.eow_duration)
+
+        updated_json_string = json.dumps(data, indent=2)
+        return updated_json_string
