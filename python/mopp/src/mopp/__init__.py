@@ -100,6 +100,7 @@ class Mopp:
 
     def __init__(self, speed = 20):
         self.speed = speed
+        self.set_speed (speed=speed)
         return
     
     def set_speed(self, speed = 20):
