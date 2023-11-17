@@ -21,7 +21,6 @@ The payload for version 1 has the following structure:
 ```json
 {
   "version": 1,
-  "raw_payload_mopp": "Base64 of encoded raw MOPP data",
   "durations": [60, -60, 180, -60, 380, -60],
 }
 ```
@@ -31,6 +30,8 @@ The payload for version 1 has the following structure:
 ```json
 {
   "version": 2,
+    "raw_payload_mopp": "Base64 of encoded raw MOPP data",
+
   "sender": "Optional string with name of the sender",
   "receiver": "Optional string with name of the receiver",
   "raw_payload_mopp": "Base64 of encoded raw MOPP data",
