@@ -30,7 +30,7 @@ morse = {
   }
 
 
-def encode(text):
+def encode(text): # FIXME: Make a first function to convert character to .- language and a 2nd to convert to 01010 and a final one to convert to mopp binary
     """takes a string of characters and returns a wordbuffer"""
     wordbuffer = []
     for c in text:
