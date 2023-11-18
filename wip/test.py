@@ -73,7 +73,23 @@ def normalize_duration_timings(duration_array=my_test_bug):
     return result
 
 
-print (normalize_duration_timings(duration_array=my_v))
-print (normalize_duration_timings(duration_array=my_test_bug))
+#print (normalize_duration_timings(duration_array=my_v))
+#print (normalize_duration_timings(duration_array=my_test_bug))
 
 
+
+def wpm_estimater (duration_array):
+    my_test_bug = [ -347, +145, -183, +51, -160, +51, -47, +47, -51, +47, -211, +144 ] 
+    duration_array = my_test_bug
+    positive_durations = [duration for duration in duration_array if duration > 0]
+    average_duration = float(sum(positive_durations))/float(len(positive_durations)) 
+    threshold = average_duration
+    possible_dits = [duration for duration in positive_durations if duration < threshold]
+    possible_dahs = [duration for duration in positive_durations if duration >= threshold]
+    print (positive_durations)
+    print (possible_dits)
+    print (possible_dahs)
+    average_dit_duration = ( sum (possible_dits ) + 1/3.0 * sum(possible_dahs) ) / len (positive_durations)
+    wpm_estimate = int(1200 / average_dit_duration) if average_dit_duration > 0 else 0
+    print (average_dit_duration)
+    print (wpm_estimate)
