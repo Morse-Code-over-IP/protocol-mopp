@@ -58,7 +58,7 @@ moip/listchannels
 "durations": [60, -60, 180, -60, 180, -60]
 ... WIP
 
-mosquitto_pub -h broker.hivemq.com -t  /moip/udp2mqtt/durations -m '{ "durations": [60, -60, 180, -60, 380, -60] }'
+mosquitto_pub -h broker.hivemq.com -t  /moip/udp2mqtt/durations -m '{ "durations": [60, -60, 180, -60, 380, -60], "version": 1 }'
 
 
 
