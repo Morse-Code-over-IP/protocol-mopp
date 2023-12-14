@@ -55,23 +55,22 @@ def decode(buffer):
     outcode = ""
     outchars = ""
     for el in buffer:
-        if el == "01":
-            outcode += "."
-        elif el == "10":
-            outcode += "-"
-        elif el == "00":
-            
-            for letter, code in morse.items():
-                if code == outcode:
-                    outchars += letter
-                    outcode = ""
-        elif el =="11":
-            for letter, code in morse.items():
-                if code == outcode:
-                    outchars += letter
-                    outcode = ""
-                    outchars = outchars + " "
-                    return outchars
+      if el == "01":
+        outcode += "."
+      elif el == "10":
+        outcode += "-"
+      elif el == "00":
+        for letter, code in morse.items():
+          if code == outcode:
+            outchars += letter
+            outcode = ""
+      elif el == "11":
+        for letter, code in morse.items():
+          if code == outcode:
+            outchars += letter
+            outcode = ""
+    outchars = outchars + " "
+    return outchars
 
 
 #make own zfill for uPython
@@ -245,3 +244,4 @@ class Mopp:
 
         updated_json_string = json.dumps(data, indent=2)
         return updated_json_string
+
