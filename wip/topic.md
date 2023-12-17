@@ -60,7 +60,7 @@ moip/listchannels
 
 mosquitto_pub -h broker.hivemq.com -t  /moip/udp2mqtt/durations -m '{ "durations": [60, -60, 180, -60, 380, -60], "version": 1 }'
 
-
+mosquitto_sub  -h broker.hivemq.com -t  /moip/udp2mqtt/durations
 
 
 channel = mtc.kob..._wire1
